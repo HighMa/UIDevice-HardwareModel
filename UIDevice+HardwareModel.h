@@ -58,7 +58,10 @@ enum UIHardwareModel
 }; typedef NSUInteger UIHardwareModel;
 
 @interface UIDevice (HardwareModel) 
-
+/**
+ *	Returns hardware name of device instance
+ */
+- (NSString *)hardwareName;
 /**
  *	Returns hardware id of device instance
  */
