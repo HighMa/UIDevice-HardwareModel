@@ -7,64 +7,64 @@
 
 #import <UIKit/UIKit.h>
 
-enum UIHardwareModel 
+enum UIHighHardwareModel 
 {
-    UIHardwareModelUnknown = 0,
-	UIHardwareModelSimulator = 1,
+    UIHighHardwareModelUnknown = 0,
+	UIHighHardwareModelSimulator = 1,
     
-	UIHardwareModeliPhone1G = 2,
-	UIHardwareModeliPhone3G = 3,
-	UIHardwareModeliPhone3GS = 4,
-	UIHardwareModeliPhone4 = 5,
-	UIHardwareModeliPhone4Verizon = 6,
+	UIHighHardwareModeliPhone1G = 2,
+	UIHighHardwareModeliPhone3G = 3,
+	UIHighHardwareModeliPhone3GS = 4,
+	UIHighHardwareModeliPhone4 = 5,
+	UIHighHardwareModeliPhone4Verizon = 6,
     
-	UIHardwareModeliPodTouch1G = 7,
-	UIHardwareModeliPodTouch2G = 8,
-	UIHardwareModeliPodTouch3G = 9,
-	UIHardwareModeliPodTouch4G = 10,
+	UIHighHardwareModeliPodTouch1G = 7,
+	UIHighHardwareModeliPodTouch2G = 8,
+	UIHighHardwareModeliPodTouch3G = 9,
+	UIHighHardwareModeliPodTouch4G = 10,
     
-	UIHardwareModeliPad = 11,
-	UIHardwareModeliPad2Wifi = 12,
-	UIHardwareModeliPad2GSM = 13,
-	UIHardwareModeliPad2CDMA = 14,
+	UIHighHardwareModeliPad = 11,
+	UIHighHardwareModeliPad2Wifi = 12,
+	UIHighHardwareModeliPad2GSM = 13,
+	UIHighHardwareModeliPad2CDMA = 14,
     
-    UIHardwareModeliPhone4S = 15,
+    UIHighHardwareModeliPhone4S = 15,
     
-	UIHardwareModeliPad3Wifi = 16,
-	UIHardwareModeliPad3GSM = 17,
-	UIHardwareModeliPad3CDMA = 18,
+	UIHighHardwareModeliPad3Wifi = 16,
+	UIHighHardwareModeliPad3GSM = 17,
+	UIHighHardwareModeliPad3CDMA = 18,
     
-	UIHardwareModeliPhone5 = 19,
-    UIHardwareModeliPhone5Global = 20,
+	UIHighHardwareModeliPhone5 = 19,
+    UIHighHardwareModeliPhone5Global = 20,
     
-	UIHardwareModeliPodTouch5G = 21,
+	UIHighHardwareModeliPodTouch5G = 21,
     
-	UIHardwareModeliPadMiniWifi = 22,
-	UIHardwareModeliPadMiniGSM = 23,
-	UIHardwareModeliPadMiniCDMA = 24,
-	UIHardwareModeliPad4Wifi = 25,
-    UIHardwareModeliPad4GSM = 26,
-    UIHardwareModeliPad4CDMA = 27,
+	UIHighHardwareModeliPadMiniWifi = 22,
+	UIHighHardwareModeliPadMiniGSM = 23,
+	UIHighHardwareModeliPadMiniCDMA = 24,
+	UIHighHardwareModeliPad4Wifi = 25,
+    UIHighHardwareModeliPad4GSM = 26,
+    UIHighHardwareModeliPad4CDMA = 27,
     
-	UIHardwareModeliPhone5c = 28,
-    UIHardwareModeliPhone5cGlobal = 29,
+	UIHighHardwareModeliPhone5c = 28,
+    UIHighHardwareModeliPhone5cGlobal = 29,
     
-	UIHardwareModeliPhone5s = 30,
-    UIHardwareModeliPhone5sGlobal = 31,
+	UIHighHardwareModeliPhone5s = 30,
+    UIHighHardwareModeliPhone5sGlobal = 31,
     
-    UIHardwareModeliPhone6 = 32,
-    UIHardwareModeliPhone6Plus = 33
+    UIHighHardwareModeliPhone6 = 32,
+    UIHighHardwareModeliPhone6Plus = 33
     
-}; typedef NSUInteger UIHardwareModel;
+}; typedef NSUInteger UIHighHardwareModel;
 
 @interface UIDevice (HardwareModel) 
 /**
  *	Returns hardware name of device instance
  */
-- (NSString *)hardwareName;
+- (NSString *)highHardwareName;
 /**
  *	Returns hardware id of device instance
  */
--(UIHardwareModel)hardwareModel;
+-(UIHighHardwareModel)highHardwareModel;
 
 @end
