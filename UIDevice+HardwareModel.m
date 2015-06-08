@@ -8,109 +8,109 @@
 #import "UIDevice+HardwareModel.h"
 #include <sys/sysctl.h>
 
-@implementation UIDevice (HardwareModel)
-- (NSString *)hardwareName
+@implementation UIDevice (HighHardwareModel)
+- (NSString *)highHardwareName
 {
 	NSString *name = @"Unknown";
 	
-	switch ([self hardwareModel]) {
-		case UIHardwareModeliPad:
+	switch ([self HighHardwareModel]) {
+		case UIHighHardwareModeliPad:
 			name = @"iPad 1G";
 			break;
-		case UIHardwareModeliPad2CDMA:
+		case UIHighHardwareModeliPad2CDMA:
 			name = @"iPad 2 CDMA";
 			break;
-		case UIHardwareModeliPad2GSM:
+		case UIHighHardwareModeliPad2GSM:
 			name = @"iPad 2 GSM";
 			break;
-		case UIHardwareModeliPad2Wifi:
+		case UIHighHardwareModeliPad2Wifi:
 			name = @"iPad 2 Wifi";
 			break;
-		case UIHardwareModeliPad3CDMA:
+		case UIHighHardwareModeliPad3CDMA:
 			name = @"iPad 3 CDMA";
 			break;
-		case UIHardwareModeliPad3GSM:
+		case UIHighHardwareModeliPad3GSM:
 			name = @"iPad 3 GSM";
 			break;
-		case UIHardwareModeliPad3Wifi:
+		case UIHighHardwareModeliPad3Wifi:
 			name = @"iPad 3 Wifi";
 			break;
-		case UIHardwareModeliPad4CDMA:
+		case UIHighHardwareModeliPad4CDMA:
 			name = @"iPad 4 CDMA";
 			break;
-		case UIHardwareModeliPad4GSM:
+		case UIHighHardwareModeliPad4GSM:
 			name = @"iPad 4 GSM";
 			break;
-		case UIHardwareModeliPad4Wifi:
+		case UIHighHardwareModeliPad4Wifi:
 			name = @"iPad 4 Wifi";
 			break;
-		case UIHardwareModeliPadMiniCDMA:
+		case UIHighHardwareModeliPadMiniCDMA:
 			name = @"iPad mini CDMA";
 			break;
-		case UIHardwareModeliPadMiniGSM:
+		case UIHighHardwareModeliPadMiniGSM:
 			name = @"iPad mini GSM";
 			break;
-		case UIHardwareModeliPadMiniWifi:
+		case UIHighHardwareModeliPadMiniWifi:
 			name = @"iPad mini Wifi";
 			break;
-		case UIHardwareModeliPhone1G:
+		case UIHighHardwareModeliPhone1G:
 			name = @"iPhone 1G";
 			break;
-		case UIHardwareModeliPhone3G:
+		case UIHighHardwareModeliPhone3G:
 			name = @"iPhone 3G";
 			break;
-		case UIHardwareModeliPhone3GS:
+		case UIHighHardwareModeliPhone3GS:
 			name = @"iPhone 3Gs";
 			break;
-		case UIHardwareModeliPhone4:
+		case UIHighHardwareModeliPhone4:
 			name = @"iPhone 4";
 			break;
-		case UIHardwareModeliPhone4S:
+		case UIHighHardwareModeliPhone4S:
 			name = @"iPhone 4s";
 			break;
-		case UIHardwareModeliPhone4Verizon:
+		case UIHighHardwareModeliPhone4Verizon:
 			name = @"iPhone 4 Verizon";
 			break;
-		case UIHardwareModeliPhone5:
+		case UIHighHardwareModeliPhone5:
 			name = @"iPhone 5";
 			break;
-		case UIHardwareModeliPhone5c:
+		case UIHighHardwareModeliPhone5c:
 			name = @"iPhone 5c";
 			break;
-		case UIHardwareModeliPhone5cGlobal:
+		case UIHighHardwareModeliPhone5cGlobal:
 			name = @"iPhone 5c Global";
 			break;
-		case UIHardwareModeliPhone5Global:
+		case UIHighHardwareModeliPhone5Global:
 			name = @"iPhone 5 Global";
 			break;
-		case UIHardwareModeliPhone5s:
+		case UIHighHardwareModeliPhone5s:
 			name = @"iPhone 5s";
 			break;
-		case UIHardwareModeliPhone5sGlobal:
+		case UIHighHardwareModeliPhone5sGlobal:
 			name = @"iPhone 5s Global";
 			break;
-		case UIHardwareModeliPodTouch1G:
+		case UIHighHardwareModeliPodTouch1G:
 			name = @"iPod 1G";
 			break;
-		case UIHardwareModeliPodTouch2G:
+		case UIHighHardwareModeliPodTouch2G:
 			name = @"iPod 2G";
 			break;
-		case UIHardwareModeliPodTouch3G:
+		case UIHighHardwareModeliPodTouch3G:
 			name = @"iPod 3G";
 			break;
-		case UIHardwareModeliPodTouch4G:
+		case UIHighHardwareModeliPodTouch4G:
 			name = @"iPod 4G";
 			break;
-		case UIHardwareModeliPodTouch5G:
+		case UIHighHardwareModeliPodTouch5G:
 			name = @"iPod 5G";
 			break;
-		case UIHardwareModelSimulator:
+		case UIHighHardwareModelSimulator:
 			name = @"Simulator";
 			break;
-		case UIHardwareModeliPhone6Plus:
+		case UIHighHardwareModeliPhone6Plus:
 			name = @"iPhone 6 Plus";
 			break;
-		case UIHardwareModeliPhone6:
+		case UIHighHardwareModeliPhone6:
 			name = @"iPhone 6";
 			break;
 		default:
@@ -120,9 +120,9 @@
 	
 	return name;
 }
--(UIHardwareModel)hardwareModel
+-(UIHighHardwareModel)highHardwareModel
 {
-	static UIHardwareModel _hardwareModel;
+	static UIHighHardwareModel _hardwareModel;
 	
 	if(!_hardwareModel)
 	{
@@ -136,109 +136,109 @@
 		NSString *hwString = [NSString stringWithCString: model encoding: NSUTF8StringEncoding];
 		free(model);
         
-        _hardwareModel = UIHardwareModelUnknown; // Unknown by default
+        _hardwareModel = UIHighHardwareModelUnknown; // Unknown by default
 		
 		if([hwString isEqualToString: @"i386"] || [hwString isEqualToString:@"x86_64"])   
-			_hardwareModel = UIHardwareModelSimulator;
+			_hardwareModel = UIHighHardwareModelSimulator;
 		
 		if([hwString isEqualToString: @"iPhone1,1"])    
-			_hardwareModel = UIHardwareModeliPhone1G;
+			_hardwareModel = UIHighHardwareModeliPhone1G;
 		
 		if([hwString isEqualToString: @"iPhone1,2"])   
-			_hardwareModel = UIHardwareModeliPhone3G;
+			_hardwareModel = UIHighHardwareModeliPhone3G;
 		
 		if([hwString isEqualToString: @"iPhone2,1"])  
-			_hardwareModel = UIHardwareModeliPhone3GS;
+			_hardwareModel = UIHighHardwareModeliPhone3GS;
 		
 		if([hwString isEqualToString: @"iPhone3,1"]) 
-			_hardwareModel = UIHardwareModeliPhone4;
+			_hardwareModel = UIHighHardwareModeliPhone4;
 		
 		if([hwString isEqualToString: @"iPhone3,2"]) 
-			_hardwareModel = UIHardwareModeliPhone4Verizon;
+			_hardwareModel = UIHighHardwareModeliPhone4Verizon;
         
 		if([hwString isEqualToString: @"iPhone4,1"]) 
-			_hardwareModel = UIHardwareModeliPhone4S;
+			_hardwareModel = UIHighHardwareModeliPhone4S;
 		
 		if([hwString isEqualToString: @"iPod1,1"])  
-			_hardwareModel = UIHardwareModeliPodTouch1G;
+			_hardwareModel = UIHighHardwareModeliPodTouch1G;
 		
 		if([hwString isEqualToString: @"iPod2,1"]) 
-			_hardwareModel = UIHardwareModeliPodTouch2G;
+			_hardwareModel = UIHighHardwareModeliPodTouch2G;
 		
 		if([hwString isEqualToString: @"iPod3,1"])    
-			_hardwareModel = UIHardwareModeliPodTouch3G;
+			_hardwareModel = UIHighHardwareModeliPodTouch3G;
 		
 		if([hwString isEqualToString: @"iPod4,1"]) 
-			_hardwareModel = UIHardwareModeliPodTouch4G;
+			_hardwareModel = UIHighHardwareModeliPodTouch4G;
 		
 		if([hwString isEqualToString: @"iPad1,1"]) 
-			_hardwareModel = UIHardwareModeliPad;
+			_hardwareModel = UIHighHardwareModeliPad;
 		
 		if([hwString isEqualToString: @"iPad2,1"])   
-			_hardwareModel = UIHardwareModeliPad2Wifi;
+			_hardwareModel = UIHighHardwareModeliPad2Wifi;
 		
 		if([hwString isEqualToString: @"iPad2,2"])   
-			_hardwareModel = UIHardwareModeliPad2GSM;
+			_hardwareModel = UIHighHardwareModeliPad2GSM;
 		
 		if([hwString isEqualToString: @"iPad2,3"])      
-			_hardwareModel = UIHardwareModeliPad2CDMA;
+			_hardwareModel = UIHighHardwareModeliPad2CDMA;
 			
 		if([hwString isEqualToString: @"iPad2,4"])      
-			_hardwareModel = UIHardwareModeliPad2Wifi;
+			_hardwareModel = UIHighHardwareModeliPad2Wifi;
         
 		if([hwString isEqualToString: @"iPad3,1"])     
-			_hardwareModel = UIHardwareModeliPad3Wifi;
+			_hardwareModel = UIHighHardwareModeliPad3Wifi;
         
 		if([hwString isEqualToString: @"iPad3,2"])     
-			_hardwareModel = UIHardwareModeliPad3GSM;
+			_hardwareModel = UIHighHardwareModeliPad3GSM;
         
 		if([hwString isEqualToString: @"iPad3,3"])     
-			_hardwareModel = UIHardwareModeliPad3CDMA;
+			_hardwareModel = UIHighHardwareModeliPad3CDMA;
         
 		if([hwString isEqualToString: @"iPhone5,1"])
-			_hardwareModel = UIHardwareModeliPhone5;
+			_hardwareModel = UIHighHardwareModeliPhone5;
         
 		if([hwString isEqualToString: @"iPhone5,2"])
-			_hardwareModel = UIHardwareModeliPhone5Global;
+			_hardwareModel = UIHighHardwareModeliPhone5Global;
         
 		if([hwString isEqualToString: @"iPhone5,3"])
-			_hardwareModel = UIHardwareModeliPhone5c;
+			_hardwareModel = UIHighHardwareModeliPhone5c;
         
 		if([hwString isEqualToString: @"iPhone5,4"])
-			_hardwareModel = UIHardwareModeliPhone5cGlobal;
+			_hardwareModel = UIHighHardwareModeliPhone5cGlobal;
         
 		if([hwString isEqualToString: @"iPhone6,1"])
-			_hardwareModel = UIHardwareModeliPhone5s;
+			_hardwareModel = UIHighHardwareModeliPhone5s;
         
 		if([hwString isEqualToString: @"iPhone6,2"])
-			_hardwareModel = UIHardwareModeliPhone5sGlobal;
+			_hardwareModel = UIHighHardwareModeliPhone5sGlobal;
         
 		if([hwString isEqualToString: @"iPod5,1"])
-			_hardwareModel = UIHardwareModeliPodTouch5G;
+			_hardwareModel = UIHighHardwareModeliPodTouch5G;
         
 		if([hwString isEqualToString: @"iPad2,5"])
-			_hardwareModel = UIHardwareModeliPadMiniWifi;
+			_hardwareModel = UIHighHardwareModeliPadMiniWifi;
         
 		if([hwString isEqualToString: @"iPad2,6"])
-			_hardwareModel = UIHardwareModeliPadMiniGSM;
+			_hardwareModel = UIHighHardwareModeliPadMiniGSM;
 			
 		if([hwString isEqualToString: @"iPad2,7"])
-			_hardwareModel = UIHardwareModeliPadMiniCDMA;
+			_hardwareModel = UIHighHardwareModeliPadMiniCDMA;
         
 		if([hwString isEqualToString: @"iPad3,4"])
-			_hardwareModel = UIHardwareModeliPad4Wifi;
+			_hardwareModel = UIHighHardwareModeliPad4Wifi;
         
 		if([hwString isEqualToString: @"iPad3,5"])
-			_hardwareModel = UIHardwareModeliPad4GSM;
+			_hardwareModel = UIHighHardwareModeliPad4GSM;
 			
 		if([hwString isEqualToString: @"iPad3,6"])
-			_hardwareModel = UIHardwareModeliPad4CDMA;
+			_hardwareModel = UIHighHardwareModeliPad4CDMA;
             
         if([hwString isEqualToString: @"iPhone7,1"])
-            _hardwareModel = UIHardwareModeliPhone6Plus;
+            _hardwareModel = UIHighHardwareModeliPhone6Plus;
         
         if([hwString isEqualToString: @"iPhone7,2"])
-            _hardwareModel = UIHardwareModeliPhone6;
+            _hardwareModel = UIHighHardwareModeliPhone6;
 	}
 	
 	return _hardwareModel;
