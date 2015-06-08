@@ -13,7 +13,7 @@
 {
 	NSString *name = @"Unknown";
 	
-	switch ([self HighHardwareModel]) {
+	switch ([self highHardwareModel]) {
 		case UIHighHardwareModeliPad:
 			name = @"iPad 1G";
 			break;
