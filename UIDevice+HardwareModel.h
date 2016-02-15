@@ -52,7 +52,10 @@ typedef NS_ENUM(NSInteger, UIHighHardwareModel) {
     UIHighHardwareModeliPhone5sGlobal = 31,
     
     UIHighHardwareModeliPhone6 = 32,
-    UIHighHardwareModeliPhone6Plus = 33
+    UIHighHardwareModeliPhone6Plus = 33,
+    
+    UIHighHardwareModeliPhone6S = 33,
+    UIHighHardwareModeliPhone6SPlus = 34
 };
 @interface UIDevice (HighHardwareModel) 
 /**
