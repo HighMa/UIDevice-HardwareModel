@@ -113,6 +113,12 @@
 		case UIHighHardwareModeliPhone6:
 			name = @"iPhone 6";
 			break;
+		case UIHighHardwareModeliPhone6S:
+			name = @"iPhone 6S";
+			break;
+		case UIHighHardwareModeliPhone6SPlus:
+			name = @"iPhone 6S Plus";
+			break;
 		default:
 			name = @"Unknown";
 			break;
@@ -234,12 +240,18 @@
 		if([hwString isEqualToString: @"iPad3,6"])
 			_hardwareModel = UIHighHardwareModeliPad4CDMA;
             
-        if([hwString isEqualToString: @"iPhone7,1"])
-            _hardwareModel = UIHighHardwareModeliPhone6Plus;
+        	if([hwString isEqualToString: @"iPhone7,1"])
+        		_hardwareModel = UIHighHardwareModeliPhone6Plus;
+        	if([hwString isEqualToString: @"iPhone7,2"])
+            		_hardwareModel = UIHighHardwareModeliPhone6;
+        	if([hwString isEqualToString: @"iPhone8,1"])
+            		_hardwareModel = UIHighHardwareModeliPhone6S;
+                if([hwString isEqualToString: @"iPhone8,2"])
+            		_hardwareModel = UIHighHardwareModeliPhone6SPlus;
         
-        if([hwString isEqualToString: @"iPhone7,2"])
-            _hardwareModel = UIHighHardwareModeliPhone6;
+        
 	}
+	
 	
 	return _hardwareModel;
 }
